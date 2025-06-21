@@ -1,0 +1,136 @@
+############################################################################################
+#                                                                                          #
+#                                                                                          #
+#  ███████╗██████╗ ███████╗ ██████╗██╗ █████╗ ██╗         ██╗████████╗███████╗███╗   ███╗  #
+#  ██╔════╝██╔══██╗██╔════╝██╔════╝██║██╔══██╗██║         ██║╚══██╔══╝██╔════╝████╗ ████║  #
+#  ███████╗██████╔╝█████╗  ██║     ██║███████║██║         ██║   ██║   █████╗  ██╔████╔██║  #
+#  ╚════██║██╔═══╝ ██╔══╝  ██║     ██║██╔══██║██║         ██║   ██║   ██╔══╝  ██║╚██╔╝██║  #
+#  ███████║██║     ███████╗╚██████╗██║██║  ██║███████╗    ██║   ██║   ███████╗██║ ╚═╝ ██║  #
+#  ╚══════╝╚═╝     ╚══════╝ ╚═════╝╚═╝╚═╝  ╚═╝╚══════╝    ╚═╝   ╚═╝   ╚══════╝╚═╝     ╚═╝  #
+#                                                                                          #
+#                                                                                          #
+############################################################################################
+
+permissions:
+  open-menu: "specialitems.open"
+  give-items: "specialitems.give"
+  give-all-items: "specialitems.giveall"
+  reload: "specialitems.reload"
+
+settings:
+  op-bypass-permissions: true
+
+menu:
+  title: "&6&lSpecial&e&lItems"
+
+messages:
+  no-permission: "&8[&c!&8] &cYou do not have permission."
+  player-not-found: "&8[&c!&8] &cPlayer not found."
+  config-reloaded: "&8[&a!&8] &aConfiguration successfully reloaded."
+  item-given: "&8[&a!&8] &fYou have received a special item: &e{item}"
+  cooldown-active: "&8[&c!&8] &cYou can use this item again on&c&l {time} Seconds"
+
+  commands:
+    item-not-exist: "&8[&c!&8] &f That item does not exist!"
+    invalid-amount: "&8[&c!&8] &cInvalid amount! Using 1 by default."
+    no-players-online: "&8[&c!&8] &cNo players online to give items to!"
+    given-item: "&8[&c!&8] &aGiven {item} &7(x{amount}) &ato {player}"
+    given-all: "&8[&c!&8] &aGiven {item} &7(x{amount}) &ato all online players &7({count} players)"
+    usage:
+      give: "&8[&b!&8]&7 Usage: &a/specialitem give <player> <item> [amount]"
+      giveall: "&8[&b!&8]&7 Usage: &a/specialitem giveall <item> [amount]"
+    available-items-header: "&8[&b!&8]&7 Available items:"
+    available-custom-items-header: "&8[&b!&8]&7 Available custom items:"
+    no-custom-items: "&7- &cNo custom items available"
+    separator: "&7&m--------------------------------"
+
+  #CustomItems messages
+  CustomItems:
+    disabled-world: "&8[&b!&8] &cYou cannot use this item in this world."
+    disabled-region: "&8[&b!&8] &cYou cannot use this item in this region."
+
+  # Item messages
+  ice-prison:
+    disabled-world: "&8[&b!&8] &cYou cannot use this item in this world."
+    no-space: "&8[&b!&8] &cThere is not enough space to create the Ice Prison."
+    created: "&8[&b!&8] &aYou have created an Ice Prison around you!"
+    melted: "&8[&b!&8] &aThe Ice Prison has melted."
+    adjusted-location: "&8[&b!&8] &eThe Ice Prison has been placed in a nearby safe location."
+    no-safe-location: "&8[&b!&8] &cNo safe location was found to place the Ice Prison."
+    prison-overlaps-region: "&8[&b!&8] &cThe Ice Prison would overlap with a protected region."
+  Samurai:
+    disabled-world: "&8[&b!&8] &cYou cannot use this item in this world."
+    ability-used: "&8[&b!&8] &aYou have activated the speed ability of the Samurai Sword."
+    broken: "&8[&b!&8] &cYour Samurai Sword has broken after many uses."
+    damage-dealt: "&8[&b!&8] &7You dealt &c{damage} &7damage points to &e{entity}."
+  ArrowsRain:
+    disabled-world: "&8[&b!&8] &cYou cannot use this item in this world."
+    ability-used: "&8[&b!&8] &aYou have used the Arrows Rain!"
+    broken: "&8[&b!&8] &cYour Arrows Rain bow has broken after many uses."
+  Backstab:
+    disabled-world: "&8[&b!&8] &cYou cannot use this item in this world."
+    backstab-success: "&8[&b!&8] &aYou backstabbed &e{player} &afor &c{damage} &adamage!"
+    not-backstab: "&8[&b!&8] &cYou need to attack from behind!"
+    broken: "&8[&b!&8] &cYour BackStap item has broken after use."
+  GrapplingHook:
+    disabled-world: "&8[&b!&8] &cYou cannot use this item in this world."
+    broken: "&8[&b!&8] &cYour Grappling-Hook item has broken after use."
+  NinjaStar:
+    disabled-world: "&8[&b!&8] &cYou cannot use this item in this world."
+    disabled-region: "&8[&b!&8] &cYou cannot use this item in this region."
+    no-attacker: "&8[&b!&8] &cNo one has attacked you recently."
+    expired: "&8[&b!&8] &cYour last attacker trace has expired."
+    attacker-offline: "&8[&b!&8] &cYour last attacker is offline."
+    attacker-disabled-world: "&8[&b!&8] &cYour attacker is in a world where Ninja Star is disabled."
+    attacker-disabled-region: "&8[&b!&8] &cYour attacker is in a region where Ninja Star is disabled."
+    teleported: "&8[&b!&8] &aYou have teleported to &e{player}&a!"
+    preparing-teleport: "&8[&b!&8] &aPreparing to teleport in {seconds} seconds..."
+    teleport-failed: "&8[&b!&8] &cTeleport failed. Your NinjaStar has been returned."
+    victim-notify: "&8[&b!&8] &c¡Watch out! &e{player} &cwill teleport to you in 3 seconds using NinjaStar!"
+  lightning:
+    disabled-world: "&8[&b!&8] &cYou cannot use Ninja Star in this world."
+    ability-used: "&8[&b!&8] &aYou have struck &e{player} &awith lightning for &c{damage} &adamage!"
+    broken: "&8[&b!&8] &cYour Lightning item has broken after many uses."
+    global-cooldown: "&8[&c!&8] &cThe player &e{player} &cis protected from lightning for &e{time} &cmore seconds"
+  SwapperAxe:
+    disabled-world: "&8[&b!&8] &cYou cannot use this item in this world."
+    helmet-removed: "&8[&b!&8] &aYou have removed &e{player}'s &ahelmet for 5 seconds."
+    helmet-returned: "&8[&b!&8] &aYour helmet has been returned."
+    no-helmet: "&8[&c!&8] &cThe target player is not wearing a helmet."
+    not-diamond-helmet: "&8[&c!&8] &cThe target player is not wearing a diamond helmet."
+    hit-progress: "&8[&!&] You have hit &e{player} &a{hits} 8 times. &7(&{remaining} &7 more hits to remove the helmet)"
+  Switcher:
+    disabled-world: "&8[&b!&8] &cYou cannot use this item in this world."
+    swapped-success: "&8[&b!&8] &aYou have swapped positions with &a{player}&a."
+    swapped-failed-distance: "&8[&c!&8] &cThe player is too far away to swap positions (maximum 15 blocks)."
+    target-in-disabled-region: "&8[&c!&8] &cYou can't use the switcher on &e{player}&c because it's in a protected region."
+  Rocket:
+    disabled-world: "&8[&b!&8] &cYou cannot use this item in this world."
+    no-target: "&8[&b!&8] &cNo valid target location found."
+    launched: "&8[&b!&8] &aRocket launched successfully!"
+  Shuffler:
+    disabled-world: "&8[&b!&8] &cYou cannot use this item in this world."
+    hit-progress: "&8[&b!&8] &aYou have hit &e{player} &a{hits} times. &7(&e{remaining} &7more hits to shuffle)"
+    shuffled: "&8[&b!&8] &aYou have shuffled &e{player}'s &ahotbar!"
+    shuffled-victim: "&8[&b!&8] &cYour hotbar has been shuffled by &e{player}&c!"
+  Detector:
+    disabled-world: "&8[&b!&8] &cYou cannot use this item in this world."
+    hit-progress: "&8[&b!&8] &aYou have hit &e{player} &a{hits} times. &7(&e{remaining} &7more hits to track)"
+    tracking-started: "&8[&b!&8] &aNow tracking &e{player} &afor &e{time} &aseconds!"
+    tracking-message: "&e{player} &7is &a{distance} &7blocks away from you"
+    tracking-ended: "&8[&b!&8] &cTracking of &e{player} &chas ended."
+  Totem:
+    disabled-world: "&8[&b!&8] &cYou cannot use this item in this world."
+    activated: "&8[&a!&8] &aTotem activated! You will be protected for {duration} seconds."
+    effect-ended: "&8[&a!&8] &cThe Totem's effect has ended."
+    saved-from-death: "&8[&a!&8] &aThe Totem saved you from death!"
+    healed: "&8[&a!&8] &aYou have been fully healed by the Totem!"
+    already-active: "&8[&a!&8] &cYou already have an active Totem effect."
+    effect-removed: "&8[&a!&8] &cYour Totem effect has been removed."
+  Fissure:
+    disabled-world: "&8[&b!&8] &cYou cannot use this item in this world."
+    fissure-created: "&8[&b!&8] &a¡You've created an instant fissure!"
+  CloneBot:
+    disabled-world: "&8[&b!&8] &cYou cannot use this item in this world."
+    created: "&8[&b!&8] &aYour clonebot has been spawned, attack a player!."
+    expired: "&8[&b!&8] &eYour clonebot has expired."
