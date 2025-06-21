@@ -1,5 +1,5 @@
 Autor: ImShadow
-Última actualización: 21/06/2025
+Last Update: 21/06/2025
 
 By purchasing, downloading, or using any of my premium plugins, you agree to comply with the following Terms of Service. These terms are designed to protect both the author and legitimate users.
 
