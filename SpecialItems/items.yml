@@ -1,0 +1,295 @@
+###################################################################
+#                                                                 #
+#                                                                 #
+#             ██╗████████╗███████╗███╗   ███╗███████╗             #
+#             ██║╚══██╔══╝██╔════╝████╗ ████║██╔════╝             #
+#             ██║   ██║   █████╗  ██╔████╔██║███████╗             #
+#             ██║   ██║   ██╔══╝  ██║╚██╔╝██║╚════██║             #
+#             ██║   ██║   ███████╗██║ ╚═╝ ██║███████║             #
+#             ╚═╝   ╚═╝   ╚══════╝╚═╝     ╚═╝╚══════╝             #
+#                                                                 #
+#                                                                 #
+###################################################################
+
+ice-prison:
+  enabled: true
+  material: "ICE"
+  name: "&b&l&nIcePrison"
+  lore:
+    - ""
+    - "&7creates an ice prison around you"
+    - "&7for &b{duration} &7seconds."
+    - ""
+    - "&7Available at: &b&nstore.nameserver.com"
+  duration: 10
+  cooldown: 30
+  size: 4
+  height: 4
+  menu-slot: 0
+  disabled-worlds:
+    - "pvp_world"
+    - "creative_world"
+
+Samurai:
+  enabled: true
+  material: "DIAMOND_SWORD"
+  name: "&c&lSAMURAI SWORD"
+  lore:
+    - ""
+    - "&7This item can cause 10-100 damage"
+    - "&7Remaining uses: &c{uses}"
+    - ""
+    - "&e&oRight click to gain speed"
+    - ""
+    - "&7Available at: &b&nstore.nameserver.com"
+  cooldown: 60
+  menu-slot: 1
+  uses: 10
+  damage: "10-100"
+  show-damage-message: true
+  right_click_command:
+    - "effect %player% speed 30 2"
+  disabled-worlds:
+    - "pvp_world"
+    - "creative_world"
+
+ArrowsRain:
+  enabled: true
+  material: "BOW"
+  name: "&9&lARROWS RAIN"
+  lore:
+    - ""
+    - "&7Launch a shower of arrows at your enemies."
+    - "&7Damage: &c{damage}"
+    - "&7Remaining uses: &c{uses}"
+    - ""
+    - "&7Available at: &b&nstore.nameserver.com"
+  cooldown: 60
+  menu-slot: 2
+  uses: 10
+  damage: "5-10"
+  disabled-worlds:
+    - "pvp_world"
+    - "creative_world"
+
+Backstap:
+  enabled: true
+  material: "GOLD_SWORD"
+  name: "&6&lBackStab"
+  lore:
+    - ""
+    - "&7Deal &c{damage} &7damage when hitting"
+    - "&7a player from behind."
+    - "&7Remaining uses: &c{uses}"
+    - ""
+    - "&7Available at: &b&nstore.nameserver.com"
+  cooldown: 5
+  menu-slot: 3
+  uses: 1
+  damage: 50
+  disabled-worlds:
+    - "pvp_world"
+    - "creative_world"
+
+GrapplingHook:
+  enabled: true
+  material: "FISHING_ROD"
+  name: "&5&lGrappling Hook"
+  lore:
+    - ""
+    - "&7Throw it and propel yourself"
+    - "&7to where it landed."
+    - ""
+    - "&7Available at: &b&nstore.nameserver.com"
+  cooldown: 10
+  menu-slot: 4
+  uses: 20
+  disabled-worlds:
+    - "pvp_world"
+    - "creative_world"
+
+NinjaStar:
+  enabled: true
+  material: "NETHER_STAR"
+  name: "&4&lNinja Star"
+  lore:
+    - ""
+    - "&7Teleport to the last player"
+    - "&7to hit you"
+    - ""
+    - "&7Available at: &b&nstore.nameserver.com"
+  cooldown: 60
+  menu-slot: 5
+  duration-attack: 60
+  right_click_command:
+    - "effect %player% speed 30 2"
+    - "effect %player% strength 30 1"
+  disabled-worlds:
+    - "pvp_world"
+    - "creative_world"
+
+Lightning:
+  enabled: true
+  material: "BLAZE_ROD"
+  name: "&9&lLight&b&lNing"
+  lore:
+    - ""
+    - "&7Generates lightning when you hit the"
+    - "&7player 3 times for 8 seconds"
+    - "&7Chance: &e{chance}%"
+    - ""
+    - "&7Available at: &b&nstore.nameserver.com"
+  cooldown: 60
+  menu-slot: 6
+  damage: 50
+  chance: 100
+  cooldown-use-player: 30
+  disabled-worlds:
+    - "pvp_world"
+    - "creative_world"
+
+SwapperAxe:
+  enabled: true
+  material: "GOLD_AXE"
+  name: "&dSwapper Axe"
+  lore:
+    - ""
+    - "&7By attacking the player 3 times the"
+    - "&7helmet will be removed for 5 seconds"
+    - ""
+    - "&7Available at: &b&nstore.nameserver.com"
+  cooldown: 60
+  menu-slot: 7
+  only-diamond: true #By setting this option to false, it will apply to all helmets.
+  disabled-worlds:
+    - "pvp_world"
+    - "creative_world"
+
+Switcher:
+  enabled: true
+  material: "SNOW_BALL"
+  name: "&dSwitcher"
+  lore:
+    - ""
+    - "&7When thrown at a player, you will swap places"
+    - "&7with them within a 15-degree radius."
+    - ""
+    - "&7Available at: &b&nstore.nameserver.com"
+  cooldown: 20
+  menu-slot: 8
+  disabled-worlds:
+    - "pvp_world"
+    - "creative_world"
+
+Rocket:
+  enabled: true
+  material: "FIREWORK"
+  name: "&cRocket"
+  lore:
+    - ""
+    - "&7Right Click to jump to where"
+    - "&7you are looking"
+    - "&7Power: &e{power} &7blocks"
+    - ""
+    - "&7Available at: &b&nstore.nameserver.com"
+  power: 5.0      # Launch power/distance multiplier
+  max-distance: 100  # Maximum target distance
+  cooldown: 30
+  menu-slot: 9
+  consume: true
+  disabled-worlds:
+    - "pvp_world"
+    - "creative_world"
+
+Shuffler:
+  enabled: true
+  material: "GOLD_INGOT"
+  name: "&6Shuffler"
+  lore:
+    - ""
+    - "&7Hitting the player 3 times will turn"
+    - "&7the player's hotbar around."
+    - ""
+    - "&7Available at: &b&nstore.nameserver.com"
+  cooldown: 30
+  menu-slot: 10
+  disabled-worlds:
+    - "pvp_world"
+    - "creative_world"
+
+Detector:
+  enabled: true
+  material: "COMPASS"
+  name: "&dDetector"
+  lore:
+    - ""
+    - "&7By hitting a player 3 times you will be able"
+    - "&7to track their location for {time} seconds"
+    - ""
+    - "&7Available at: &b&nstore.nameserver.com"
+  cooldown: 30
+  menu-slot: 11
+  duration: 15
+  disabled-worlds:
+    - "pvp_world"
+    - "creative_world"
+
+Totem:
+  enabled: true
+  material: "EMERALD"
+  name: "&a&lTOTEM"
+  lore:
+    - ""
+    - "&7Automatically activates when you reach"
+    - "&7{hearts} hearts or less, restoring all health"
+    - "&7Effect lasts for &a{duration} &7seconds"
+    - ""
+    - "&7Available at: &b&nstore.nameserver.com"
+  cooldown: 60
+  menu-slot: 12
+  hearts-to-recovers: 4
+  duration: 30
+  disabled-worlds:
+    - "pvp_world"
+    - "creative_world"
+
+Fissure:
+  enabled: true
+  material: "STICK"
+  name: "&e&lFISURE"
+  lore:
+    - ""
+    - "&7A rift will open up at the location you were"
+    - "&7looking at and will push any being that"
+    - "&7was near the rift"
+    - ""
+    - "&7Available at: &b&nstore.nameserver.com"
+  cooldown: 60
+  menu-slot: 13
+  player-push: 8 #blocks distance
+  consume: true
+  disabled-worlds:
+    - "pvp_world"
+    - "creative_world"
+CloneBot:
+  enabled: true
+  name: "&5&lClone&d&lBot"
+  lore:
+    - ""
+    - "&7When you use this item, a clone of yourself"
+    - "&7will appear that will help you finish off"
+    - "&7the enemy you attack!"
+    - ""
+    - "&7Available at: &b&nstore.nameserver.com"
+  cooldown: 60
+  menu-slot: 14
+  health: 20
+  cps: 12
+  reach: 2.5
+  follow-distance: 5.0 # distance between the bot and the player
+  damage: 1.0
+  duration: 10
+  consume: true
+  disabled-worlds:
+    - "pvp_world"
+    - "creative_world"
