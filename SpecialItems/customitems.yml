@@ -1,0 +1,141 @@
+######################################################################################################3
+#                                                                                                     #
+#                                                                                                     #
+#                                                                                                     #
+#   ██████╗██╗   ██╗███████╗████████╗ ██████╗ ███╗   ███╗    ██╗████████╗███████╗███╗   ███╗███████╗  #
+#  ██╔════╝██║   ██║██╔════╝╚══██╔══╝██╔═══██╗████╗ ████║    ██║╚══██╔══╝██╔════╝████╗ ████║██╔════╝  #
+#  ██║     ██║   ██║███████╗   ██║   ██║   ██║██╔████╔██║    ██║   ██║   █████╗  ██╔████╔██║███████╗  #
+#  ██║     ██║   ██║╚════██║   ██║   ██║   ██║██║╚██╔╝██║    ██║   ██║   ██╔══╝  ██║╚██╔╝██║╚════██║  #
+#  ╚██████╗╚██████╔╝███████║   ██║   ╚██████╔╝██║ ╚═╝ ██║    ██║   ██║   ███████╗██║ ╚═╝ ██║███████║  #
+#   ╚═════╝ ╚═════╝ ╚══════╝   ╚═╝    ╚═════╝ ╚═╝     ╚═╝    ╚═╝   ╚═╝   ╚══════╝╚═╝     ╚═╝╚══════╝  #
+#                                                                                                     #
+#                                                                                                     #
+#                                                                                                     #
+#######################################################################################################
+
+#TYPES:
+# player_attack | right_click
+
+#Player_attack Type:
+#hit-use: 3
+
+#ACTIONS and EXAMPLES:
+# console_command: effect %player% strength 60 1
+# message: Hello!
+# potion_effect: SLOW;120;1;false | effect;duration_in_ticks;level;show_particles (https://hub.spigotmc.org/javadocs/spigot/org/bukkit/potion/PotionEffectType.html)
+# random_effect: STRENGTH;DAMAGE_RESISTANCE;SPEED;120;1;FALSE | effects;duration_in_ticks;level;show_particles
+# crafting_table: open
+# damage: 10
+# actionbar: Hello!;60 | message;duration
+# wait: 1 | Timeout to execute the next action
+
+# projectile_attack:FIREBALL;1.5;8" Type;Velocity;Damage
+# Projectiles Types: ARROW | SNOWBALL | EGG | FIREBALL | SMALL_FIREBALL | WITHER_SKULL
+
+
+belch_bomb:
+  enabled: true
+  type: right_click
+  material: "SLIME_BALL"
+  name: "&aBelch Bomb"
+  lore:
+    - ""
+    - "&7When using this item all players within a 5"
+    - "&7block radius will be slowed down"
+    - ""
+    - "&7Cooldown: &e30 seconds"
+    - ""
+    - "&7Available at: &b&nstore.nameserver.com"
+  cooldown: 30
+  menu-slot: 0
+  page: 2
+  consume: true
+  to_radius: 5
+  actions:
+    - "message: &cYou've been hit by a Belch Bomb!"
+    - "potion_effect: BLINDNESS;300;1;false" # 5 seconds (100 ticks)
+    - "potion_effect: SLOW;300;1;false" # 5 seconds (100 ticks)
+  disabled-worlds:
+    - "pvp_world"
+    - "creative_world"
+strength:
+  enabled: true
+  type: right_click
+  material: "BLAZE_POWDER"
+  name: "&cStrength II"
+  lore:
+    - ""
+    - "&7Give you 8 seconds of &cStrength II"
+    - ""
+    - "&7Cooldown: &e2 minutes"
+    - ""
+    - "&7Available at: &b&nstore.nameserver.com"
+  cooldown: 120
+  menu-slot: 1
+  page: 2
+  consume: true
+  actions:
+    - "message: &r"
+    - "message: &8- &aYou have used a &cStrength&a!"
+    - "message: &8- &aYou now have 8 seconds of &cStrength&a!"
+    - "message: &8- &aCooldown: &f2:00"
+    - "message: &r"
+    - "potion_effect: INCREASE_DAMAGE;160;2;false"
+  disabled-worlds:
+    - "pvp_world"
+    - "creative_world"
+
+speed:
+  enabled: true
+  type: right_click
+  material: "SUGAR"
+  name: "&bSpeed III"
+  lore:
+    - ""
+    - "&7Give you 8 seconds of &bSpeed III"
+    - ""
+    - "&7Cooldown: &e2 minutes"
+    - ""
+    - "&7Available at: &b&nstore.nameserver.com"
+  cooldown: 120
+  menu-slot: 2
+  page: 2
+  consume: true
+  actions:
+    - "message: &r"
+    - "message: &8- &aYou have used a &bSpeed&a!"
+    - "message: &8- &aYou now have 15 seconds of &bSpeed&a!"
+    - "message: &8- &aCooldown: &f2:00"
+    - "message: &r"
+    - "potion_effect: SPEED;300;2;false"
+  disabled-worlds:
+    - "pvp_world"
+    - "creative_world"
+    -
+MagicWand:
+  enabled: true
+  type: right_click
+  material: "BLAZE_ROD"
+  name: "&5&lMagic Wand"
+  lore:
+    - ""
+    - "&7Shoot projectiles at your enemies!"
+    - ""
+    - "&7Cooldown: &e2 minutes"
+    - ""
+    - "&7Available at: &b&nstore.nameserver.com"
+  cooldown: 120
+  menu-slot: 3
+  page: 2
+  consume: true
+  actions:
+    - "message: &r"
+    - "message: &8- &aYou have used a &5&lMagic Wand&a!"
+    - "message: &8- &aCooldown: &f2:00"
+    - "message: &r"
+    - "projectile_attack:FIREBALL;1.5;8" # Type;Velocity;Damage
+    - "wait: 2"
+    - "projectile_attack:SMALL_FIREBALL;1.5;8" # Type;Velocity;Damage
+  disabled-worlds:
+    - "pvp_world"
+    - "creative_world"
