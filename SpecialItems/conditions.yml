@@ -1,0 +1,44 @@
+# Format:
+# items:
+#   item-id:
+#     conditions:
+#       - condition: "placeholder operator value"
+#         actions:
+#           - "action1: value"
+#           - "action2: value"
+#
+# Supported operators: ==, !=, >, <, >=, <=, contains, !contains
+# Supported actions: message, cancel_event, command, sound
+# PERMISSION: %player_has_permission_example.bypass% == true/false
+
+# IN CASE AN ITEM INTERFERES WITHIN A DISABLED REGION, TRY TO CREATE
+# ANOTHER LARGER REGION BY DISABLING THE SPACE YOU DO NOT WANT TO BE AFFECTED.
+
+global-cooldown: 30
+worlds:
+  disabled: []
+regions:
+  disabled: []
+
+items:
+  ice-prison:
+    conditions:
+      - condition: "%worldguard_region_name% == spawn"
+        actions:
+          - "cancel_event: true"
+          - "message: &8[&b!&8] &cYou cannot use this item in this region."
+      - condition: "%player_has_permission_ice-prison.bypass% == false"
+        actions:
+          - "cancel_event: true"
+          - "message: &8[&b!&8] &cYou don't have permission to use this item."
+  ArrowsRain:
+    conditions:
+      - condition: "%worldguard_region_name% == test"
+        actions:
+          - "cancel_event: true"
+          - "message: &8[&b!&8] &cYou cannot use this item in this region."
+      - condition: "%player_has_permission_arrowsrain.bypass% == false"
+        actions:
+          - "cancel_event: true"
+          - "message: &8[&b!&8] &cYou don't have permission to use this item."
+  #MORE HERE
